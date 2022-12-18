@@ -46,6 +46,11 @@ const Input = styled.input`
 
 const Center = styled.div`
   flex: 1; // Allocate equal space to all three divs -> left, center, right
+  text-align: center;
+`
+
+const Logo = styled.div`
+  font-weight: bold;
 `
 
 const Right = styled.div`
@@ -63,7 +68,9 @@ const Navbar = () => {
             <Search />
           </SearchContainer>
         </Left>
-        <Center>Center</Center>
+        <Center>
+          <Logo>LAMA.</Logo>
+        </Center>
         <Right>Right</Right>
       </Wrapper>
     </Container>
