@@ -1,8 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import image1 from '../images/image_1.png';
-
+import { sliderItems } from "../data";
 // Use images from unsplash.com
 // Remove Background from the images using https://pixlr.com/remove-background/
 // Save the background-removed images into images folder
@@ -19,7 +18,7 @@ const Container = styled.div`
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #fff7f7;
+  background-color: #cfcbcb;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -33,7 +32,8 @@ const Arrow = styled.div`
   left: ${props => props.direction === "left" && "10px"};
   right: ${props => props.direction === "right" && "10px"};
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.75;
+  z-index: 2;
 `
 
 const Wrapper = styled.div`
@@ -41,6 +41,8 @@ const Wrapper = styled.div`
   display: flex;
   /* transform: translateX(-100vw); This makes the 3rd slide visible */
   /* transform: translateX(-200vw); */ /* This makes the 3rd slide visible*/
+  transition: all 1.5s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `
 
 const Slide = styled.div`
@@ -84,46 +86,41 @@ const Button = styled.button`
 `
 
 const Slider = () => {
+
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  const handleClick = (direction) => {
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length-1);
+    } else {
+      setSlideIndex(slideIndex < sliderItems.length-1 ? slideIndex + 1 : 0);
+    }
+  };
+
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined/>
       </Arrow>
-      <Wrapper>
-        <Slide bg="f5fafd">
-          <ImgContainer>
-            <Image src={image1}/>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>WEDDING SALE</Title>
-            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
-
-        <Slide bg="fcf1ed">
-          <ImgContainer>
-            <Image src={image1}/>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>WINTER SALE</Title>
-            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
-
-        <Slide bg="fbf0f4">
-          <ImgContainer>
-            <Image src={image1}/>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>PARTY SALE</Title>
-            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
+      <Wrapper slideIndex={slideIndex}>
+        {
+          sliderItems.map((item) => {
+              return (
+              <Slide bg={item.bg} key={item.id}>
+              <ImgContainer>
+                <Image src={item.img}/>
+              </ImgContainer>
+              <InfoContainer>
+                <Title>{item.title}</Title>
+                <Desc>{item.desc}</Desc>
+                <Button>SHOP NOW</Button>
+              </InfoContainer>
+            </Slide>
+            )
+          })
+        }
       </Wrapper>
-      <Arrow direction="right">
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRightOutlined/>
       </Arrow>
     </Container>
