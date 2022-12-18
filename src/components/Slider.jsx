@@ -39,6 +39,8 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
+  /* transform: translateX(-100vw); This makes the 3rd slide visible */
+  /* transform: translateX(-200vw); */ /* This makes the 3rd slide visible*/
 `
 
 const Slide = styled.div`
@@ -93,7 +95,7 @@ const Slider = () => {
             <Image src={image1}/>
           </ImgContainer>
           <InfoContainer>
-            <Title>SUMMER SALE</Title>
+            <Title>WEDDING SALE</Title>
             <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
             <Button>SHOP NOW</Button>
           </InfoContainer>
