@@ -31,6 +31,7 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
   height: 100%;
+  display: flex;
 `
 
 const Slide = styled.div`
@@ -79,6 +80,28 @@ const Slider = () => {
         <ArrowLeftOutlined/>
       </Arrow>
       <Wrapper>
+        <Slide>
+          <ImgContainer>
+            <Image src="https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2362&q=80"/>
+          </ImgContainer>
+          <InfoContainer>
+            <Title>SUMMER SALE</Title>
+            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+            <Button>SHOP NOW</Button>
+          </InfoContainer>
+        </Slide>
+
+        <Slide>
+          <ImgContainer>
+            <Image src="https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2362&q=80"/>
+          </ImgContainer>
+          <InfoContainer>
+            <Title>SUMMER SALE</Title>
+            <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+            <Button>SHOP NOW</Button>
+          </InfoContainer>
+        </Slide>
+
         <Slide>
           <ImgContainer>
             <Image src="https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2362&q=80"/>
