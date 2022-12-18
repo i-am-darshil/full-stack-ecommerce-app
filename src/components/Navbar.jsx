@@ -1,3 +1,4 @@
+import { Search } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -5,6 +6,9 @@ import styled from 'styled-components'
 // To install -> npm i styled-components
 
 // Install extension "vscode-styled-components"
+
+// Add icons using material-ui -> https://mui.com/material-ui/material-icons/
+// Install material-ui core and icons -> npm i @material-ui/core @material-ui/icons
 
 const Container = styled.div`
   height: 60px;
@@ -14,10 +18,30 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `
 
 const Left = styled.div`
   flex: 1; // Allocate equal space to all three divs -> left, center, right
+  display: flex;
+  align-items: center;
+`
+
+const Language = styled.span`
+  font-size: 14px;
+  cursor: pointer;
+`
+
+const SearchContainer = styled.div`
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+`
+
+const Input = styled.input`
+  border: none;
 `
 
 const Center = styled.div`
@@ -32,7 +56,13 @@ const Navbar = () => {
   return (
     <Container>
       <Wrapper>
-        <Left>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, dicta ducimus commodi quod dignissimos obcaecati dolore ipsum minima asperiores exercitationem molestiae corporis ex, omnis fugiat aspernatur fuga distinctio, sint nemo!</Left>
+        <Left>
+          <Language>EN</Language>
+          <SearchContainer>
+            <Input />
+            <Search />
+          </SearchContainer>
+        </Left>
         <Center>Center</Center>
         <Right>Right</Right>
       </Wrapper>
