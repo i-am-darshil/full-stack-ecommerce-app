@@ -1,12 +1,19 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import image1 from '../images/image_1.png';
+
+// Use images from unsplash.com
+// Remove Background from the images using https://pixlr.com/remove-background/
+// Save the background-removed images into images folder
+// Import the images and use them
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   position: relative;
+  overflow: hidden;
 `
 
 const Arrow = styled.div`
@@ -39,6 +46,7 @@ const Slide = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: #${props => props.bg};
 `
 
 const ImgContainer = styled.div`
@@ -80,9 +88,9 @@ const Slider = () => {
         <ArrowLeftOutlined/>
       </Arrow>
       <Wrapper>
-        <Slide>
+        <Slide bg="f5fafd">
           <ImgContainer>
-            <Image src="https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2362&q=80"/>
+            <Image src={image1}/>
           </ImgContainer>
           <InfoContainer>
             <Title>SUMMER SALE</Title>
@@ -91,23 +99,23 @@ const Slider = () => {
           </InfoContainer>
         </Slide>
 
-        <Slide>
+        <Slide bg="fcf1ed">
           <ImgContainer>
-            <Image src="https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2362&q=80"/>
+            <Image src={image1}/>
           </ImgContainer>
           <InfoContainer>
-            <Title>SUMMER SALE</Title>
+            <Title>WINTER SALE</Title>
             <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
             <Button>SHOP NOW</Button>
           </InfoContainer>
         </Slide>
 
-        <Slide>
+        <Slide bg="fbf0f4">
           <ImgContainer>
-            <Image src="https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2362&q=80"/>
+            <Image src={image1}/>
           </ImgContainer>
           <InfoContainer>
-            <Title>SUMMER SALE</Title>
+            <Title>PARTY SALE</Title>
             <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
             <Button>SHOP NOW</Button>
           </InfoContainer>
