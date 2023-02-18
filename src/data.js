@@ -104,3 +104,46 @@ export const categories = [
     title: "LIGHT JACKETS",
   },
 ];
+
+export const popularProducts = [
+  {
+    id:1,
+    img:codingGuy,
+    bg: "fcf1ed",
+  },
+  {
+    id:2,
+    img:codingGroup1,
+    bg: "f5fafd",
+  },
+  {
+    id:3,
+    img:codingGal,
+    bg: "fbf0f4",
+  },
+  {
+    id:4,
+    img:codingMentor,
+    bg: "fcf1ed",
+  },
+  {
+    id:5,
+    img:codingCommunity,
+    bg: "f5fafd",
+  },
+  {
+    id:6,
+    img:codingDataStructures,
+    bg: "fcf1ed",
+  },
+  {
+    id:7,
+    img:codingGroup2,
+    bg: "f5fafd",
+  },
+  {
+    id:8,
+    img:codingDataAnalysis,
+    bg: "fbf0f4",
+  },
+]
