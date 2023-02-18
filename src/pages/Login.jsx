@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import RegisterImage from '../images/register.jpg';
+import LoginAndRegisterImage from '../images/LoginAndRegister.png';
+
 
 
 const LeftContainer = styled.div`
@@ -85,7 +86,7 @@ const Link = styled.a`
 const Login = () => {
   return (
     <Container>
-      <LeftContainer img={RegisterImage}>
+      <LeftContainer img={LoginAndRegisterImage}>
 
       </LeftContainer>
 
