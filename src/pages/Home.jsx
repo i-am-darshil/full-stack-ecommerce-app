@@ -15,8 +15,9 @@ const Home = () => {
       <Announcement/>
       <Navbar/>
       <Slider/>
-      <Categories />
+      {/* <Categories /> */}
       <Products/>
+      <Newsletter />
       <Footer/>
     </div>
   )

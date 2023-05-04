@@ -66,10 +66,27 @@ const Icon = styled.div`
   }
 `;
 
+const Title = styled.h3`
+    color:black;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+`;
+
 const Product = ({ item }) => {
   return (
     <Container bg={item.bg}>
       <Circle />
+      <Title>MACHINE LEARNING</Title>
       <Image src={item.img} />
       <Info>
         <Icon>

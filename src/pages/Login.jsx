@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import LoginAndRegisterImage from '../images/LoginAndRegister.png';
-
-
+import {mobile} from "../responsive";
 
 const LeftContainer = styled.div`
     width: 100vw;
@@ -14,7 +13,7 @@ const LeftContainer = styled.div`
         right;
   background-size: cover;
   flex: 1.4;
-
+  ${mobile({ display: "none" })}
 `
 
 const RightContainer = styled.div`
@@ -41,6 +40,7 @@ const Wrapper = styled.div`
   width: 80%;
   padding: 20px;
   background-color: white;
+  ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`

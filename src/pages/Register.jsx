@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import LoginAndRegisterImage from '../images/LoginAndRegister.png';
+import {mobile} from "../responsive";
 
 
 const LeftContainer = styled.div`
@@ -13,7 +14,7 @@ const LeftContainer = styled.div`
         right;
   background-size: cover;
   flex: 1.4;
-
+  ${mobile({ display: "none" })}
 `
 
 const RightContainer = styled.div`

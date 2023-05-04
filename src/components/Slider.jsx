@@ -2,6 +2,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { sliderItems } from "../data";
+import { mobile } from "../responsive";
 // Use images from unsplash.com
 // Remove Background from the images using https://pixlr.com/remove-background/
 // Save the background-removed images into images folder
@@ -13,6 +14,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({ display: "none" })}
 `
 
 const Arrow = styled.div`
